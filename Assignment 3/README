@@ -1,0 +1,38 @@
+Simon Ko
+0906762
+CIS3490
+Assignment 3
+
+To run the program type 'make'
+To execute, type ./A3 <text_file_for_Part1> <text_file_for_Part2>
+
+There is an option that displays all 5 programs
+For anagram search, type the same number and it will run the program twice, displaying the anagrams possible, as well as the execution time for both brute force and presort.
+For string search it will display the number of strings found as well as the execution time for bruteforce, horspool as well as boyer-moore algorithms.
+
+Limitations:
+Sometimes Horspool algorithm doesn't work, and there is a seg fault or hangs. For some reason, this operates on the default text file, probably due to characters in the file that cannot be read. Instead, I've used a replica of data_5.txt labelled test2.txt for my testing. Also input char instead of a number crashes my program for P11 and P12. I didn't do any error checking.
+
+Program Analysis:
+
+Analyzing the anagram algorithms
+Bruteforce: 50mS, 52,49,49,48,53 = 50.1mS
+Presort: 6mS,1mS,1mS,1mS,3mS,4mS = 2.6mS
+
+Presort is much faster than brute force. The first search was 3mS to categorize, but after was shortened to 1mS.
+Brute force was consistent at around 50mS.
+
+Time efficiency:
+Brute force was O(n^2) while presort was O(n log n)
+
+Analyzing the search string algorithms:
+Bruteforce: 55mS,38,28,27,31,36,38,39 = 36.5mS
+Horspool: 40mS,14,13,25,22,40,40,49 = 30.4mS
+Boyer-Moore: 34mS,11,10,22,10,38,35,55 = 24.4mS
+
+Brute force, average 36mS. Constant no matter what the search
+Horspool algorithm, average 30.4mS. When the sequence is not as common, it is fast, but on common words, it is slower or the same than brute force.
+Boyer-Moore algorithm, similar to Horspool, but slightly faster, average 24.4mS
+
+Time efficiency:
+Brute force was O(n^2) while horspool and boyer-moore was O(n/m)

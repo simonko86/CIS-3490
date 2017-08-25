@@ -1,0 +1,15 @@
+Simon Ko
+0906762
+CIS3490
+Assignment 2
+
+To run the program type 'make'
+To execute, type ./A2 <text_file_for_Part1> <text_file_for_Part2>
+
+It runs all four programs and prints execution time, as well as the
+number of inversions or convex hull
+
+Limitations:
+Array values are static based upon the sample files provided.
+Same with storing the convex hull. The maximum size it can store is
+30 convex hull
